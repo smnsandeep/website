@@ -1,3 +1,4 @@
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
@@ -7,8 +8,8 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Page is under construction. It'd soon be up!
-        </p>
+          Page is under construction. It'd be up soon!
+        </p> 
       </header>
     </div>
   );
