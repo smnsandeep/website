@@ -1,4 +1,4 @@
-import aboutMeImg from "../images/aboutme.jpeg";
+import aboutMeImg from "../images/aboutme.jpg";
 import { motion } from "framer-motion";
 import SocialIcons from "../components/SocialIcons";
 import { useInView } from "react-intersection-observer";
@@ -11,21 +11,10 @@ const AboutMe = ({ name, email, location, availability, brand }) => {
     triggerOnce: true,
   });
 
-  const [downloading, setDownloading] = useState(false);
-
-  useEffect(() => {
-    setDownloading(false);
-  }, [downloading]);
-
   const handleDownload = () => {
-    setDownloading(true);
     const link = document.createElement("a");
-    link.href = resume;
-    link.download = "Michael-Yeates-Resume.pdf";
-    link.onload = () => {
-      link.remove();
-      setDownloading(false);
-    };
+    link.href = "https://docs.google.com/document/d/1S8gvpdKzIA_8HE-nI5_raajPUBBuDovQ471KMvxOJzs";
+    link.target="_blank"
     document.body.appendChild(link);
     link.click();
   };
@@ -80,8 +69,8 @@ const AboutMe = ({ name, email, location, availability, brand }) => {
               </div>
             </div>
             <div className="buttonContainer">
-              <button className="btn downloadCV" onClick={handleDownload} disabled={downloading}>
-                {downloading ? "Downloading..." : "Download Resume"}
+              <button className="btn downloadCV" onClick={handleDownload}>
+                Download Resume
               </button>{" "}
               <SocialIcons />
             </div>

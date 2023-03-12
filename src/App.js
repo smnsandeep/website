@@ -3,13 +3,13 @@ import AnimatedRoutes from "./components/AnimatedRoutes";
 
 function App() {
   const personalDetails = {
-    name: "Michael Yeates",
-    location: "Loughborough, UK",
-    tagline: "I'm a Developer",
-    email: "michael-yeates@outlook.com",
-    availability: "Open for work",
+    name: "Sandeep Suman",
+    location: "Bangalore, IN",
+    tagline: "Developer",
+    email: "me@sandeepsuman.dev",
+    availability: "Open for consulting",
     brand:
-      "My unique blend of technical expertise, creative thinking, and background in psychology allows me to approach each project with a deep understanding of the end user's perspective, resulting in highly effective user-centred digital products.",
+      "",
   };
 
   return (
