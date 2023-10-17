@@ -2,7 +2,7 @@ import { Theme, useTheme } from "@/context/ThemeContxt";
 import React from "react";
 import TopBar from "./TopBar";
 import Profile from "./Profile";
-import profileData from "../data/profileData";
+import profileData from "@/data/profileData.json";
 
 const HomePage = () => {
   const themeContext = useTheme();  

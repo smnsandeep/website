@@ -8,10 +8,6 @@ interface ProfileProps {
     name: string;
     title: string;
     description: string;
-    links: {
-      url: string;
-      icon: any;
-    }[];
   };
 }
 
