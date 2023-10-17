@@ -3,16 +3,22 @@ import ToggleButton from "./ThemeToggle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThLarge } from "@fortawesome/free-solid-svg-icons";
 
-const TopBar = () => {
-  const [isDarkMode, setDarkMode] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+// Create props interface with a callback
+type TopBarProps = {
+  requestShowToast: (msg: string, timer: number) => void;
+};
 
-  const toggleDarkMode = () => {
-    setDarkMode(!isDarkMode);
-  };
+// Create a TopBar component with a callback
+const TopBar: React.FC<TopBarProps> = ({ requestShowToast }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleAppButtonClick = () => {
+    console.log("App Button Clicked");
+    requestShowToast("In progress", 3000);
   };
 
   return (
@@ -79,7 +85,10 @@ const TopBar = () => {
       <div className="flex space-x-4">
         <ToggleButton />
 
-        <button className={`bg-orange-500 text-white px-4 py-2 rounded-full`}>
+        <button
+          className={`bg-orange-500 text-white px-4 py-2 rounded-full`}
+          onClick={handleAppButtonClick}
+        >
           <FontAwesomeIcon icon={faThLarge} className="mr-2" />
           Apps
         </button>
