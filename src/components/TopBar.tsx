@@ -23,7 +23,7 @@ const TopBar: React.FC<TopBarProps> = ({ requestShowToast }) => {
 
   return (
     <div
-      className={`bg-white dark:bg-gray-800 p-4 flex justify-between lg:items-center shadow-md`}
+      className={`bg-white dark:bg-gray-800 p-4 flex justify-between lg:justify-end lg:items-center shadow-md`}
     >
       <button
         onClick={toggleMenu}

@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import Socials from "./Socials";
+import About from "./About";
 
 interface ProfileProps {
   profileData: {
@@ -13,9 +14,23 @@ interface ProfileProps {
 
 const Profile: React.FC<ProfileProps> = ({ profileData }) => {
   const { profilePicUrl, name, title, description } = profileData;
+  const [showArrow, setShowArrow] = React.useState(true);
+
+  const handleScroll = () => {
+    if (window.scrollY > 1) {
+      setShowArrow(false);
+    } else {
+      setShowArrow(true);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <div className="flex flex-col w-screen h-screen items-center py-40 lg:py-[300px] dark:bg-gray-800">
+    <div className="flex flex-col min-w-screen min-h-screen items-center py-40 lg:py-[300px] dark:bg-gray-800">
       <div className="flex flex-col lg:flex-row lg:max-w-[1080px] items-center">
         <div>
           <Image
@@ -38,13 +53,40 @@ const Profile: React.FC<ProfileProps> = ({ profileData }) => {
           </p>
         </div>
       </div>
-
       <div className="pt-44">
         <Socials />
+      </div>
+
+      <div
+        className={`flex flex-col items-center justify-center mt-14 ${
+          showArrow ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        <div className="animate-bounce">
+          <div className="w-8 h-8 flex items-center justify-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-6 h-6 text-gray-600 dark:text-white"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M19 14l-7 7m0 0l-7-7m7"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-4" id="about_section">
+        <About />
       </div>
     </div>
   );
 };
 
 export default Profile;
-

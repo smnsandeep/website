@@ -4,6 +4,7 @@ import TopBar from "./TopBar";
 import Profile from "./Profile";
 import profileData from "@/data/profileData.json";
 import Toast from "./Toast";
+import About from "./About";
 
 const HomePage = () => {
   const themeContext = useTheme();  
@@ -38,7 +39,7 @@ const HomePage = () => {
       <div className="min-h-screen flex-col items-center">
         <TopBar requestShowToast={requestShowToast}/>
         <Profile profileData={profileData} />
-        { toastData.showToast && <Toast toastData={toastData} callback={resetToast}/> }
+        {toastData.showToast && <Toast toastData={toastData} callback={resetToast} />}
       </div>
     </div>
   );
