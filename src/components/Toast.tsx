@@ -26,9 +26,9 @@ const Toast: React.FC<ToastProps> = ({ toastData, callback }) => {
     <div
       className={`${
         showToast ? "opacity-100" : "opacity-0"
-      } transition-opacity duration-500 ease-in-out fixed bottom-10 right-10 bg-white dark:bg-gray-800 p-4 rounded-md shadow-md`}
+      } transition-opacity duration-500 ease-in-out fixed bottom-10 right-10 bg-gray-800 dark:bg-white p-4 rounded-md shadow-md`}
     >
-      <p className="text-gray-600 dark:text-white text-sm">
+      <p className="text-white dark:text-gray-600 text-sm">
         {toastData.message}
       </p>
     </div>

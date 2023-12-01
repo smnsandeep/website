@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import ToggleButton from "./ThemeToggle";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faThLarge } from "@fortawesome/free-solid-svg-icons";
 
 // Create props interface with a callback
 type TopBarProps = {
@@ -16,14 +14,9 @@ const TopBar: React.FC<TopBarProps> = ({ requestShowToast }) => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const handleAppButtonClick = () => {
-    console.log("App Button Clicked");
-    requestShowToast("In progress", 3000);
-  };
-
   return (
     <div
-      className={`bg-white dark:bg-gray-800 p-4 flex justify-between lg:items-center shadow-md`}
+      className={`bg-white dark:bg-gray-800 p-4 flex justify-between lg:justify-end lg:items-center shadow-md`}
     >
       <button
         onClick={toggleMenu}
@@ -46,12 +39,9 @@ const TopBar: React.FC<TopBarProps> = ({ requestShowToast }) => {
           <li
             className={`text-gray-600 dark:text-white hover:text-orange-500 px-4 text-shadow-2xl font-thin`}
           >
-            About
-          </li>
-          <li
-            className={`text-gray-600 dark:text-white hover:text-orange-500 px-4 text-shadow-2xl font-thin`}
-          >
-            Contact
+            <a href="https://forms.gle/gVKEDgZ1rpDLjtVR8" target="_blank" rel="noreferrer">
+              Contact
+            </a>
           </li>
         </ul>
       </div>
@@ -71,11 +61,6 @@ const TopBar: React.FC<TopBarProps> = ({ requestShowToast }) => {
             <li
               className={`text-gray-600 dark:text-white hover:text-orange-500 px-4 py-4 text-shadow-2xl font-bold`}
             >
-              About
-            </li>
-            <li
-              className={`text-gray-600 dark:text-white hover:text-orange-500 px-4 py-4 text-shadow-2xl font-bold`}
-            >
               Contact
             </li>
           </ul>
@@ -85,13 +70,11 @@ const TopBar: React.FC<TopBarProps> = ({ requestShowToast }) => {
       <div className="flex space-x-4">
         <ToggleButton />
 
-        <button
-          className={`bg-orange-500 text-white px-4 py-2 rounded-full`}
-          onClick={handleAppButtonClick}
-        >
-          <FontAwesomeIcon icon={faThLarge} className="mr-2" />
-          Apps
-        </button>
+        <a href="https://toolkix.com" target="_blank" rel="noreferrer">
+          <button className={`bg-orange-500 text-white px-4 py-2 rounded-full`}>
+            ToolKix
+          </button>
+        </a>
       </div>
     </div>
   );
