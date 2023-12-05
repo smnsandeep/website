@@ -1,10 +1,9 @@
 import { Theme, useTheme } from "@/context/ThemeContxt";
-import React from "react";
-import TopBar from "./TopBar";
-import Profile from "./Profile";
 import profileData from "@/data/profileData.json";
+import React from "react";
+import Profile from "./Profile";
 import Toast from "./Toast";
-import About from "./About";
+import TopBar from "./TopBar";
 
 const HomePage = () => {
   const themeContext = useTheme();  
