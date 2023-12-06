@@ -1,13 +1,7 @@
 import React, { useState } from "react";
 import ToggleButton from "./ThemeToggle";
 
-// Create props interface with a callback
-type TopBarProps = {
-  requestShowToast: (msg: string, timer: number) => void;
-};
-
-// Create a TopBar component with a callback
-const TopBar: React.FC<TopBarProps> = ({ requestShowToast }) => {
+const TopBar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -39,7 +33,11 @@ const TopBar: React.FC<TopBarProps> = ({ requestShowToast }) => {
           <li
             className={`text-gray-600 dark:text-white hover:text-orange-500 px-4 text-shadow-2xl font-thin`}
           >
-            <a href="https://forms.gle/gVKEDgZ1rpDLjtVR8" target="_blank" rel="noreferrer">
+            <a
+              href="https://forms.gle/gVKEDgZ1rpDLjtVR8"
+              target="_blank"
+              rel="noreferrer"
+            >
               Contact
             </a>
           </li>
