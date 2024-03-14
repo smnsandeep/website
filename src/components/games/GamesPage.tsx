@@ -21,9 +21,9 @@ const GamePage = () => {
   return (
     <ThemeProvider>
       <div
-        className={`min-h-screen ${
+        className={`min-h-screen bg-gray-100 dark:bg-gray-800 ${
           theme === Theme.DARK ? "dark" : ""
-        } bg-gray-100 dark:bg-gray-800`}
+        }`}
       >
         <div className="container mx-auto py-8">
           <div className="flex justify-between items-center mb-8">
@@ -32,7 +32,8 @@ const GamePage = () => {
                 Game Landing Page
               </h1>
               <p className="text-gray-600 dark:text-gray-400">
-                Waste a few hours playing these games. You aren&apos;t doing anything productive anyway.
+                Waste a few hours playing these games. You aren&apos;t doing
+                anything productive anyway.
               </p>
             </div>
             <ToggleButton />
